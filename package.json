@@ -1,0 +1,25 @@
+{
+  "name": "warrior-arms",
+  "version": "1.0.0",
+  "description": "boilerplate to development ES6 + Webpack + React",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meche/warrior-arms.git"
+  },
+  "keywords": [
+    "ES6",
+    "webpack",
+    "react",
+    "es2015"
+  ],
+  "author": "Leandro Alexandrino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meche/warrior-arms/issues"
+  },
+  "homepage": "https://github.com/meche/warrior-arms#readme"
+}
