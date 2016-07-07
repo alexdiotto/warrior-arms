@@ -18,5 +18,7 @@ Be Happy :smile:
 
 ## ToDo
 
-- CSS Loaders.
-- hot-loader.
+- CSS loaders;
+- File loaders;
+- Image loaders;
+- hot-loader;
