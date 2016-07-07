@@ -9,6 +9,13 @@ module.exports = {
     port: 3333
   },
   module: {
+    preLoaders: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'standard'
+      }
+    ],
     loaders: [
       {
         test: /\.js$/,
