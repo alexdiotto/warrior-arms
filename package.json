@@ -4,7 +4,7 @@
   "description": "boilerplate to development ES6 + Webpack + React",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,18 @@
   "bugs": {
     "url": "https://github.com/meche/warrior-arms/issues"
   },
-  "homepage": "https://github.com/meche/warrior-arms#readme"
+  "homepage": "https://github.com/meche/warrior-arms#readme",
+  "dependencies": {
+    "react": "^15.2.0",
+    "react-dom": "^15.2.0"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
 }
