@@ -14,7 +14,7 @@ Run webpack-dev-server:
 npm start
 ```
 
-Be Happy :smile:
+Be Happy :smiley:
 
 ## ToDo
 
@@ -22,3 +22,4 @@ Be Happy :smile:
 - File loaders;
 - Image loaders;
 - hot-loader;
+- Gulp;
