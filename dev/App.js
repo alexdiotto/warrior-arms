@@ -1,4 +1,5 @@
 import React from 'react'
+
 class App extends React.Component {
   render () {
     return (
@@ -16,9 +17,18 @@ class App extends React.Component {
         <p>Try make a application with React</p>
         <h2>Fine!</h2>
         <p>Thank you!</p>
+        <ElementFolder />
       </div>
     )
   }
 }
+
+var ElementFolder = React.createClass({
+  render: function () {
+    return (
+      <small>MIT Licence 2016</small>
+    )
+  }
+})
 
 export default App
