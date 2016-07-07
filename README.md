@@ -14,7 +14,7 @@ Run webpack-dev-server:
 npm start
 ```
 
-Be Happy ::smile::
+Be Happy :smile:
 
 ## ToDo
 
