@@ -1,5 +1,7 @@
 # Warrior Arms
 
+![Warrior Arms](warrior-arms-group.png)
+
 My boilerplate to ReactJS
 
 ## Usage
