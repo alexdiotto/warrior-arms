@@ -1,6 +1,6 @@
-# Warrior Arms
-
 ![Warrior Arms](warrior-arms-group.png)
+
+# Warrior Arms
 
 My boilerplate to ReactJS
 
