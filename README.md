@@ -20,6 +20,10 @@ npm start
 
 Be Happy :smiley:
 
+## Special Thanks
+
+@fdaciuk for base project in [fdaciuk/workflow-reactjs](https://github.com/fdaciuk/workflow-reactjs).
+
 ## ToDo
 
 - CSS loaders;

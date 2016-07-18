@@ -1,3 +1,5 @@
+'use strict'
+
 import React from 'react'
 
 class App extends React.Component {
@@ -7,9 +9,6 @@ class App extends React.Component {
         <h1>Hello World!</h1>
         <p>my name is Leandro... or Leandrinoo</p>
         <ul>
-          <li> Item </li>
-          <li> Item </li>
-          <li> Item </li>
           <li> Item </li>
           <li> Item </li>
         </ul>
