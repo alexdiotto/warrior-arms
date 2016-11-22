@@ -5,7 +5,7 @@ const webpack = require('webpack')
 const validate = require('webpack-validator')
 
 const HtmlPlugin = require('html-webpack-plugin')
-const DashboardPlugin = require('webpack-dashboard-plugin')
+const DashboardPlugin = require('webpack-dashboard/plugin')
 
 module.exports = validate({
   devtool: 'source-map',
@@ -20,7 +20,7 @@ module.exports = validate({
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name]-[hash].js',
-    publicPath: '/dist/'
+    publicPath: ''
   },
 
   plugins: [
