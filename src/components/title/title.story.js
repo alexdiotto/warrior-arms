@@ -6,6 +6,6 @@ import Title from './index'
 
 const stories = storiesOf('Title', module)
 
-sories.add('without props', () => (
+stories.add('without props', () => (
   <Title>Main Title</Title>
 ))
