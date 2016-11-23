@@ -1,18 +1,32 @@
 'use strict'
-
+/*
+ * Base Webpack
+ */
 const path = require('path')
 const webpack = require('webpack')
 const validate = require('webpack-validator')
 
+/*
+ * Plugins Webpack
+ */
 const HtmlPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const DashboardPlugin = require('webpack-dashboard/plugin')
+
+/*
+ * PostCSS Plugins
+ */
+const autoprefixer = require('autoprefixer')
+const cssnext = require('postcss-cssnext')
+const postcssImport = require('postcss-import')
+const precss = require('precss')
 
 module.exports = validate({
   devtool: 'source-map',
 
   entry: [
     'react-hot-loader/patch',
-    'webpack-dev-server/client?http://localhost:3333',
+    'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server',
     path.join(__dirname, 'src', 'index')
   ],
@@ -26,6 +40,8 @@ module.exports = validate({
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new DashboardPlugin,
+
+    new ExtractTextPlugin('[name]-[hash].css'),
 
     new HtmlPlugin({
       title: 'My App',
@@ -50,7 +66,8 @@ module.exports = validate({
       test: /\.css$/,
       exclude: /node_modules/,
       include: /src/,
-      loaders: ['style', 'css']
+      loader: ExtractTextPlugin.extract('style-loader',
+        'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader')
     }],
   },
 
@@ -59,5 +76,12 @@ module.exports = validate({
       src: path.join(__dirname, 'src'),
       components: path.join(__dirname, 'src', 'components')
     }
-  }
+  },
+
+  postcss: [
+    autoprefixer({browsers: ['> 0%', 'IE 7']}),
+    cssnext(),
+    postcssImport(),
+    precss()
+  ]
 })
