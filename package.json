@@ -8,6 +8,7 @@
   "license": "MIT",
   "devDependencies": {
     "@kadira/storybook": "^2.21.0",
+    "autoprefixer": "^6.5.3",
     "babel-core": "^6.18.2",
     "babel-jest": "^17.0.2",
     "babel-loader": "^6.2.8",
@@ -20,6 +21,10 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.24.1",
     "jest-cli": "^17.0.3",
+    "postcss-cssnext": "^2.8.0",
+    "postcss-import": "^8.2.0",
+    "postcss-loader": "^1.1.1",
+    "precss": "^1.4.0",
     "react-hot-loader": "^3.0.0-beta.6",
     "standard": "^8.5.0",
     "standard-loader": "^5.0.0",
