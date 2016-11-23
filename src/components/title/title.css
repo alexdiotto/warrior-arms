@@ -1,3 +1,11 @@
-h1 {
+$sizeLine: 20px;
+:root {
+  --color: green;
+}
+.testClass {
+  font-size: $sizeLine;
+  color: var(--color);
   font-family: sans-serif;
+  display: flex;
+  flex-flow: row wrap;
 }
