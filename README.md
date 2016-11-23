@@ -10,12 +10,17 @@ My boilerplate to ReactJS
 
 Install packages:
 ```sh
-npm install
+yarn install
 ```
 
 Run webpack-dev-server:
 ```sh
-npm start
+yarn start
+```
+
+Run StoryBook
+```sh
+yarn storybook
 ```
 
 Be Happy :smiley:
@@ -26,8 +31,7 @@ Be Happy :smiley:
 
 ## ToDo
 
-- CSS loaders;
-- File loaders;
+- --CSS loaders--;
+- --File loaders--;
 - Image loaders;
-- hot-loader;
-- Gulp;
+- --hot-loader--;
