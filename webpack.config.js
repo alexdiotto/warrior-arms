@@ -10,7 +10,6 @@ const validate = require('webpack-validator')
  * Plugins Webpack
  */
 const HtmlPlugin = require('html-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const DashboardPlugin = require('webpack-dashboard/plugin')
 
 /*
@@ -41,8 +40,6 @@ module.exports = validate({
     new webpack.HotModuleReplacementPlugin(),
     new DashboardPlugin,
 
-    new ExtractTextPlugin('[name]-[hash].css'),
-
     new HtmlPlugin({
       title: 'My App',
       template: path.join(__dirname, 'src', 'html', 'template.html')
@@ -66,9 +63,11 @@ module.exports = validate({
       test: /\.css$/,
       exclude: /node_modules/,
       include: /src/,
-      loader: ExtractTextPlugin.extract('style-loader',
-        'css-loader?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader?sourceMap')
-    }],
+      loaders: [
+        'style-loader',
+        'css-loader?sourceMap&modules!postcss-loader?sourceMap'
+      ]
+    }]
   },
 
   resolve: {
