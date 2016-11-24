@@ -1,6 +1,6 @@
 $sizeLine: 20px;
 :root {
-  --color: green;
+  --color: pink;
 }
 .testClass {
   font-size: $sizeLine;
