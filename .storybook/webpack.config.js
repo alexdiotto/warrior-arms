@@ -1,17 +1,46 @@
 'use strict'
 
-const webpackConfig =
-  require('@kadira/storybook/dist/server/config/defaults/webpack.config.js')
+const path = require('path')
 
-module.exports = function (config, env) {
-  const newConfig = webpackConfig(config, env)
+/*
+ * PostCSS Plugins
+ */
+const autoprefixer = require('autoprefixer')
+const cssnext = require('postcss-cssnext')
+const postcssImport = require('postcss-import')
+const precss = require('precss')
 
-  newConfig.module.preLoaders = (newConfig.module.preLoaders || []).concat({
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'standard'
-  })
+module.exports = {
+  module: {
+    preLoaders: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      include: /src/,
+      loader: 'standard'
+    }],
 
-  return newConfig
+    loaders: [{
+      test: /\.css$/,
+      exclude: /node_modules/,
+      include: /src/,
+      loaders: [
+        'style-loader',
+        'css-loader?sourceMap&modules!postcss-loader?sourceMap'
+      ]
+    }]
+  },
 
+  resolve: {
+    alias: {
+      src: path.join(__dirname, 'src'),
+      components: path.join(__dirname, 'src', 'components')
+    }
+  },
+
+  postcss: [
+    autoprefixer({browsers: ['> 0%', 'IE 7']}),
+    cssnext({warnForDuplicates: false}),
+    postcssImport(),
+    precss()
+  ]
 }
