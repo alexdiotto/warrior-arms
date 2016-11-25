@@ -79,7 +79,7 @@ module.exports = validate({
 
   postcss: [
     autoprefixer({browsers: ['> 0%', 'IE 7']}),
-    cssnext(),
+    cssnext({warnForDuplicates: false}),
     postcssImport(),
     precss()
   ]
