@@ -31,7 +31,7 @@ Be Happy :smiley:
 
 ## ToDo
 
-- ~~CSS loaders~~;
-- ~~File loaders~~;
-- Image loaders;
-- ~~hot-loader~~;
+- [x] CSS loaders
+- [x] File loader
+- [ ] Image loaders
+- [x] `hot-loader`
