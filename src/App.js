@@ -3,6 +3,8 @@
 import React from 'react'
 import Title from 'components/title'
 
+import './App.css'
+
 class App extends React.Component {
   render () {
     return (

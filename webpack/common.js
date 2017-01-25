@@ -2,12 +2,12 @@
 
 const path = require('path')
 
-const autoprefixer - require('autoprefixer')
+const autoprefixer = require('autoprefixer')
 const cssnext = require('postcss-cssnext')
 const postcssImport = require('postcss-import')
 
 module.exports = {
-  entry: path.join(__dirname, '..', 'src', 'index')
+  entry: path.join(__dirname, '..', 'src', 'index'),
 
   output: {
     path: path.join(__dirname, '..', 'dist'),
@@ -52,9 +52,9 @@ module.exports = {
   },
 
   postcss: [
-     autoprefixer({browsers: ['> 0%', 'IE 7']}),↴
-     cssnext({warnForDuplicates: false}),↴
-     postcssImport(),↴
+     autoprefixer({browsers: ['> 0%', 'IE 7']}),
+     cssnext({warnForDuplicates: false}),
+     postcssImport()
   ]
 
 }
