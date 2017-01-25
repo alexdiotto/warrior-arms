@@ -1,14 +1,18 @@
 {
-  "name": "warrior-arms",
-  "version": "0.1.0",
-  "description": "Workflow to ReactJS",
-  "main": "index.html",
-  "repository": "git@github.com:meche/warrior-arms.git",
-  "author": "Leandro Alexandrino <hello@meche.space>",
-  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dashboard -- node server.js",
+    "test": "jest --coverage",
+    "test:watch": "yarn test -- --watch",
+    "lint": "standard --verbose | snazzy",
+    "lint:watch": "gulp",
+    "lint:fix": "standard --fix",
+    "build": "cross-env NODE_ENV=production webpack --progress --config webpack/prod.config -p",
+    "storybook": "start-storybook -p 6006 -c storybook",
+    "build-storybook": "build-storybook -c storybook"
+
+  },
   "devDependencies": {
-    "@kadira/storybook": "^2.21.0",
-    "autoprefixer": "^6.7.0",
+    "@kadira/storybook": "^2.30.1",
     "babel-core": "^6.18.2",
     "babel-jest": "^17.0.2",
     "babel-loader": "^6.2.8",
@@ -17,33 +21,32 @@
     "babel-preset-stage-0": "^6.16.0",
     "chai": "^3.5.0",
     "cross-env": "^3.1.3",
-    "css-loader": "^0.26.1",
+    "css-loader": "^0.26.0",
     "extract-text-webpack-plugin": "^1.0.1",
+    "gulp": "^3.9.1",
     "html-webpack-plugin": "^2.24.1",
     "jest-cli": "^17.0.3",
-    "postcss-cssnext": "^2.8.0",
-    "postcss-import": "^8.2.0",
-    "postcss-loader": "^1.1.1",
-    "precss": "^1.4.0",
-    "react-hot-loader": "^1.3.1",
-    "standard": "^8.6.0",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "snazzy": "^5.0.0",
+    "standard": "^8.5.0",
     "standard-loader": "^5.0.0",
     "style-loader": "^0.13.1",
-    "webpack": "^1.14.0",
+    "webpack": "^1.13.3",
     "webpack-dashboard": "^0.2.0",
     "webpack-dev-server": "^1.16.2",
     "webpack-validator": "^2.2.9"
+
   },
   "dependencies": {
     "react": "^15.4.0",
     "react-dom": "^15.4.0"
+
   },
-  "scripts": {
-    "start": "webpack-dashboard -- node server.js",
-    "test": "jest --coverage",
-    "test:watch": "yarn test -- --watch",
-    "build": "cross-env NODE_ENV=production webpack --progress --config webpack/prod.config -p",
-    "storybook": "start-storybook -p 6006 -c storybook",
-    "build-storybook": "build-storybook -c storybook"
-  }
+"Name": "warrior-arms",
+"version": "0.1.0",
+"description": "Workflow to ReactJS",
+"main": "index.html",
+"repository": "git@github.com:meche/warrior-arms.git",
+"author": "Leandro Alexandrino <hello@meche.space>",
+"license": "MIT"
 }
