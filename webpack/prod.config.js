@@ -45,7 +45,5 @@ module.exports = validate({
 
   },
 
-  resolve: common.resolve,
-
-  postcss: common.postcss
+  resolve: common.resolve
 })

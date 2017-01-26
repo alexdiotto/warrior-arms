@@ -30,11 +30,9 @@ module.exports = validate({
   ],
 
   module: {
-    preLoaders: [common.standard],
+    preLoaders: [common.standardPreLoader],
     loaders: [common.jsLoader, common.cssLoader]
   },
 
-  resolve: common.resolve,
-
-  postcss: common.postcss
+  resolve: common.resolve
 })

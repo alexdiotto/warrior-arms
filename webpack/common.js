@@ -2,10 +2,6 @@
 
 const path = require('path')
 
-const autoprefixer = require('autoprefixer')
-const cssnext = require('postcss-cssnext')
-const postcssImport = require('postcss-import')
-
 module.exports = {
   entry: path.join(__dirname, '..', 'src', 'index'),
 
@@ -15,32 +11,29 @@ module.exports = {
   },
 
   htmlPluginConfig: {
-        title: 'My app',
-        template: path.join(__dirname, '..', 'src', 'html', 'template.html')
+    title: 'My app',
+    template: path.join(__dirname, '..', 'src', 'html', 'template.html')
   },
 
-  standard: {
+  standardPreLoader: {
     test: /\.js$/,
     exclude: /node_modules/,
     include: /src/,
-    loader: 'standard-loader'
+    loader: 'standard'
   },
 
   jsLoader: {
     test: /\.js$/,
     exclude: /node_modules/,
     include: /src/,
-    loader: 'babel-loader'
+    loader: 'babel'
   },
 
   cssLoader: {
-    test: /\.js$/,
+    test: /\.css$/,
     exclude: /node_modules/,
     include: /src/,
-    loaders: [
-      'style-loader',
-      'css-loader?sourceMap&modules!postcss-loader?sourceMap'
-    ]
+    loaders: ['style', 'css']
   },
 
   resolve: {
@@ -49,12 +42,5 @@ module.exports = {
       components: path.join(__dirname, '..', 'src', 'components'),
       utils: path.join(__dirname, '..', 'src', 'utils')
     }
-  },
-
-  postcss: [
-     autoprefixer({browsers: ['> 0%', 'IE 7']}),
-     cssnext({warnForDuplicates: false}),
-     postcssImport()
-  ]
-
+  }
 }
