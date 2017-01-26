@@ -4,6 +4,7 @@ const webpack = require('webpack')
 const validate = require('webpack-validator')
 
 const common = require('./common')
+const postcssConfig = require('./postcss.config')
 
 const HtmlPlugin = require('html-webpack-plugin')
 const DashboardPlugin = require('webpack-dashboard/plugin')
@@ -34,5 +35,9 @@ module.exports = validate({
     loaders: [common.jsLoader, common.cssLoader]
   },
 
-  resolve: common.resolve
+  resolve: common.resolve,
+
+  postcss: () => {
+    return postcssConfig.config
+  }
 })

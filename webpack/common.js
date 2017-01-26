@@ -33,7 +33,10 @@ module.exports = {
     test: /\.css$/,
     exclude: /node_modules/,
     include: /src/,
-    loaders: ['style', 'css']
+    loaders: [
+      'style-loader',
+      'css-loader?sourceMap&modules!postcss-loader?sourceMap'
+    ]
   },
 
   resolve: {
