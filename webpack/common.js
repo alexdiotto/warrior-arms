@@ -35,7 +35,7 @@ module.exports = {
     include: /src/,
     loaders: [
       'style-loader',
-      'css-loader?sourceMap&modules!postcss-loader?sourceMap'
+      'css-loader?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader?sourceMap'
     ]
   },
 
