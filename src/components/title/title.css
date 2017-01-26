@@ -1,9 +1,9 @@
-$sizeLine: 20px;
 :root {
   --color: pink;
+  --size: 30px;
 }
 .testClass {
-  font-size: $sizeLine;
+  font-size: var(--size);
   color: var(--color);
   font-family: sans-serif;
   display: flex;
