@@ -10,7 +10,7 @@ My boilerplate to ReactJS
 
 Install packages:
 ```sh
-yarn install
+./warrior.sh
 ```
 
 Run webpack-dev-server:
@@ -21,6 +21,16 @@ yarn start
 Run StoryBook
 ```sh
 yarn storybook
+```
+
+Run Tests with Jest
+```sh
+yarn test
+```
+
+Run Build
+```sh
+yarn build
 ```
 
 Be Happy :smiley:
@@ -35,3 +45,4 @@ Be Happy :smiley:
 - [x] File loader
 - [ ] Image loaders
 - [x] `hot-loader`
+- [ ] Shell Script to install environment
