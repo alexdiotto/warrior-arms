@@ -1,49 +1,68 @@
 'use strict'
 
-const path = require('path')
+const { join } = require('path')
+const postCssConf =require('./postcss.config.js')
 
 module.exports = {
-  entry: path.join(__dirname, '..', 'src', 'index'),
+  entry: join(__dirname, '..', 'src', 'index'),
 
   output: {
-    path: path.join(__dirname, '..', 'dist'),
+    path: join(__dirname, '..', 'dist'),
     filename: '[name]-[hash].js'
   },
 
   htmlPluginConfig: {
     title: 'My app',
-    template: path.join(__dirname, '..', 'src', 'html', 'template.html')
+    template: join(__dirname, '..', 'src', 'html', 'template.html')
   },
 
   standardPreLoader: {
     test: /\.js$/,
+    enforce: 'pre',
     exclude: /node_modules/,
-    include: /src/,
-    loader: 'standard'
+    include: join(__dirname, '..', 'src'),
+    use: 'standard-loader'
   },
 
   jsLoader: {
     test: /\.js$/,
     exclude: /node_modules/,
-    include: /src/,
-    loader: 'babel'
+    include: join(__dirname, '..', 'src'),
+    use: 'babel-loader'
   },
 
   cssLoader: {
     test: /\.css$/,
     exclude: /node_modules/,
-    include: /src/,
-    loaders: [
-      'style-loader',
-      'css-loader?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader?sourceMap'
+    include: join(__dirname, '..', 'src'),
+    use: [
+      {
+        loader: 'style-loader',
+        options: {
+          sourceMap: true
+        }
+      },
+      {
+        loader: 'css-loader',
+        options: {
+          sourceMap: true,
+          importLoaders: 1,
+          modules: true,
+          localIdentName: '[name]_[local]__[hash:base64:5]'
+        }
+      },
+      {
+        loader: 'postcss-loader',
+        options: postCssConf
+      }
     ]
   },
 
   resolve: {
     alias: {
-      src: path.join(__dirname, '..', 'src'),
-      components: path.join(__dirname, '..', 'src', 'components'),
-      utils: path.join(__dirname, '..', 'src', 'utils')
+      src: join(__dirname, '..', 'src'),
+      components: join(__dirname, '..', 'src', 'components'),
+      utils: join(__dirname, '..', 'src', 'utils')
     }
   }
 }

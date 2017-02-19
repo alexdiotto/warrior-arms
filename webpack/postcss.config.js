@@ -1,7 +1,8 @@
 'use strict'
 
  module.exports = {
-  config: [
+  sourceMap: true,
+  plugins: [
     require('postcss-cssnext')({
       browsers: ['> 0%', 'IE 7']
     }),
