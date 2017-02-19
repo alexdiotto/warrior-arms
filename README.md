@@ -13,6 +13,11 @@ Install packages:
 ./warrior.sh
 ```
 
+Update dependencies
+```sh
+node scripts/update.js
+```
+
 Run webpack-dev-server:
 ```sh
 yarn start
@@ -44,5 +49,6 @@ Be Happy :smiley:
 - [x] CSS loaders
 - [x] File loader
 - [ ] Image loaders
-- [x] `hot-loader`
-- [ ] Shell Script to install environment
+- [x] hot-loader
+- [x] Shell Script to install environment
+- [ ] Create Script to install in node
