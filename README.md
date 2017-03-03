@@ -10,7 +10,7 @@ My boilerplate to ReactJS
 
 Install packages:
 ```sh
-./warrior.sh
+yarn install
 ```
 
 Update dependencies
