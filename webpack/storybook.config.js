@@ -11,7 +11,13 @@ module.exports = (config, env) => {
     loader: common.standardPreLoader.use
   })
 
+  const cssloaders = Object.assing({}, common.cssLoader, {
+    use: undefined,
+    loader: common.cssLoader.use
+  })
+
   newConfig.module.preLoaders = (newConfig.module.preLoaders || []).concat(preloaders)
+  newConfig.module.loaders = (newConfig.moduleloaders || []).concat(cssloaders)
   newConfig.resolve = common.resolve
 
   return newConfig
