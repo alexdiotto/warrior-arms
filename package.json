@@ -11,7 +11,7 @@
     "test": "jest --coverage",
     "test:watch": "yarn test -- --watch",
     "build": "cross-env NODE_ENV=production webpack --progress --config webpack/prod.config -p",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 -c storybook",
     "build-storybook": "build-storybook",
     "update-packages": "node scripts/update.js"
   },
@@ -19,6 +19,7 @@
     "@kadira/storybook": "^2.21.0",
     "autoprefixer": "^6.7.6",
     "babel-core": "^6.23.1",
+    "babel-eslint": "^7.2.0",
     "babel-jest": "^19.0.0",
     "babel-loader": "^6.3.2",
     "babel-plugin-transform-runtime": "^6.23.0",
