@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react'
 
-import './css/style.css'
+import './App.css'
 
 class App extends Component {
   constructor () {
