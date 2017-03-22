@@ -11,18 +11,18 @@ module.exports = (config, env) => {
     loader: common.standardPreLoader.use.loader
   })
 
-  const cssloaders = Object.assign({}, common.cssLoader, {
-    use: undefined,
-    loaders: [
-      'style-loader',
-      'css-loader?sourceMap&modules!postcss-loader?sourceMap'
-    ]
-  })
+  // const cssloaders = Object.assign({}, common.cssLoader, {
+  //   use: undefined,
+  //   loaders: [
+  //     'style-loader',
+  //     'css-loader?sourceMap&modules!postcss-loader?sourceMap'
+  //   ]
+  // })
 
-    console.log('loaders: ', cssloaders)
+  // console.log('loaders: ', cssloaders)
 
   newConfig.module.preLoaders = (newConfig.module.preLoaders || []).concat(preloaders)
-  newConfig.module.loaders = (newConfig.module.loaders || []).concat(cssloaders)
+  // newConfig.module.loaders = (newConfig.module.loaders || []).concat(cssloaders)
   newConfig.resolve = common.resolve
   newConfig.postcss = () => {
     return [
