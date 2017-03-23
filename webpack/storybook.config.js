@@ -1,38 +1,36 @@
 'use strict'
 
-const common = require('./common')
-const webpackConfig = require('@kadira/storybook/dist/server/config/defaults/webpack.config.js')
+const path = require('path')
 
-module.exports = (config, env) => {
-  const newConfig = webpackConfig(config, env)
+module.exports = {
+  module: {
+    preLoaders: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'standard'
+    }],
 
-  const preloaders = Object.assign({}, common.standardPreLoader, {
-    use: undefined,
-    loader: common.standardPreLoader.use.loader
-  })
+    loaders: [{
+      test: /\.css$/,
+      exclude: /node_modules/,
+      include: /src/,
+      loaders: [
+        'style-loader',
+        'css-loader?sourceMap&modules!postcss-loader?sourceMap'
+      ]
+    }]
+  },
 
-  // const cssloaders = Object.assign({}, common.cssLoader, {
-  //   use: undefined,
-  //   loaders: [
-  //     'style-loader',
-  //     'css-loader?sourceMap&modules!postcss-loader?sourceMap'
-  //   ]
-  // })
+  resolve: {
+    alias: {
+      src: path.join(__dirname, 'src'),
+      components: path.join(__dirname, 'src', 'components')
+    }
+  },
 
-  // console.log('loaders: ', cssloaders)
-
-  newConfig.module.preLoaders = (newConfig.module.preLoaders || []).concat(preloaders)
-  // newConfig.module.loaders = (newConfig.module.loaders || []).concat(cssloaders)
-  newConfig.resolve = common.resolve
-  newConfig.postcss = () => {
+  postcss: () => {
     return [
-      require('postcss-cssnext')({
-        browsers: ['> 0%', 'IE 7']
-      }),
+      require('postcss-cssnext')({browsers: ['> 0%', 'IE 7']}),
       require('postcss-import')
     ]
-  }
-
-  // console.log('postcss: ', newConfig)
-  return newConfig
-}
+}}
