@@ -1,11 +1,4 @@
 {
-  "Name": "warrior-arms",
-  "version": "0.1.0",
-  "description": "Workflow to ReactJS",
-  "main": "index.html",
-  "repository": "git@github.com:meche/warrior-arms.git",
-  "author": "Leandro Alexandrino <hello@meche.space>",
-  "license": "MIT",
   "scripts": {
     "start": "webpack-dashboard -- node server.js",
     "test": "jest --coverage",

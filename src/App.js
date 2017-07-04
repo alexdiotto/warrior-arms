@@ -14,9 +14,9 @@ class App extends Component {
   }
 
   getTitle () {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       setTimeout(() => {
-        resolve('My app with async / await!')
+        resolve('My app with async / await!\n love it!')
       }, 2000)
     })
   }
