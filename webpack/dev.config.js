@@ -13,11 +13,12 @@ module.exports = {
     'react-hot-loader/patch',
     'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server',
-    common.entry
+    common.entry.main
   ],
 
   output: Object.assign({}, common.output, {
-    publicPath: ''
+    filename: ['name'].js,
+    publicPath: '/'
   }),
 
   plugins: [
@@ -31,9 +32,11 @@ module.exports = {
     rules: [
       common.standardPreLoader,
       common.jsLoader,
-      common.cssLoader
+      common.cssLoader,
+      common.fileLoader,
+      common.urlLoader
     ]
   },
 
-  resolve: common.resolve,
+  resolve: common.resolve
 }
