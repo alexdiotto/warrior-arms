@@ -48,7 +48,6 @@ Be Happy :smiley:
 
 - [x] CSS loaders
 - [x] File loader
-- [ ] Image loaders
+- [x] Image loaders
 - [x] hot-loader
-- [x] Shell Script to install environment
-- [ ] Create Script to install in node
+- [ ] Docker Image
