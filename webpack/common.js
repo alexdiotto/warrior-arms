@@ -3,7 +3,15 @@
 const { join } = require('path')
 const postCssConf =require('./postcss.config.js')
 
+const paths = {
+  root: join(__dirname, '..'),
+  src: join(__dirname, '..', 'src'),
+  dist: join(__dirname, '..', 'dist')
+}
+
 module.exports = {
+  paths,
+
   entry: {
     main: join(__dirname, '..', 'src', 'index')
   },

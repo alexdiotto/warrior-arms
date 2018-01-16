@@ -9,8 +9,6 @@
     "lint:fix": "standard --fix",
     "build": "cross-env NODE_ENV=production BABEL_ENV=production webpack --progress --config webpack/prod.config -p",
     "build:analyzer": "cross-env ANALYZER=true yarn build",
-    "storybook": "start-storybook -p 6006 -c storybook",
-    "build-storybook": "cross-env NODE_ENV=production BABEL_ENV=production build-storybook -c storybook",
     "update-packages": "node scripts/update.js"
   },
   "jest": {
@@ -19,7 +17,6 @@
     }
   },
   "devDependencies": {
-    "@kadira/storybook": "^2.21.0",
     "autoprefixer": "^7.1.1",
     "babel-core": "^6.23.1",
     "babel-eslint": "^7.2.0",
@@ -49,6 +46,8 @@
   },
   "dependencies": {
     "babel-runtime": "^6.23.0",
+    "preact": "^8.2.7",
+    "preact-compat": "^3.17.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   }

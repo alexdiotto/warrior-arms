@@ -1,36 +1,24 @@
 'use strict'
 
-const path = require('path')
+const common = require('./common')
+const webpackConfig = require('@storybook/react/dist/server/config/defaults/webpack.config.js')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-module.exports = {
-  module: {
-    preLoaders: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      loader: 'standard'
-    }],
+module.exports = (config, env) => {
+  const newConfig = webpackConfig(config, env)
 
-    loaders: [{
-      test: /\.css$/,
-      exclude: /node_modules/,
-      include: /src/,
-      loaders: [
-        'style-loader',
-        'css-loader?sourceMap&modules!postcss-loader?sourceMap'
+  newConfig.plugins.push({
+    ExtractTextPlugin.extract({
+      fallbackLoader: "style-loader",
+      loader: [
+        { loader: 'css-loader', query: {sourceMap: true} },
+        { loader: 'postcss-loader' }
       ]
-    }]
-  },
+    })
+  })
+  newConfig.module.rules.push(common.standardPreLoader)
+  newConfig.module.rules.push(common.cssLoader)
+  newConfig.resolve = common.resolve
 
-  resolve: {
-    alias: {
-      src: path.join(__dirname, 'src'),
-      components: path.join(__dirname, 'src', 'components')
-    }
-  },
-
-  postcss: () => {
-    return [
-      require('postcss-cssnext')({browsers: ['> 0%', 'IE 7']}),
-      require('postcss-import')
-    ]
-}}
+  return newConfig
+}
