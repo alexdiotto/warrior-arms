@@ -65,22 +65,23 @@ module.exports = {
     use: [
       {
         loader: 'style-loader',
-        options: {
-          sourceMap: true
-        }
+        sourceMap: true
       },
       {
         loader: 'css-loader',
         options: {
-          sourceMap: true,
           importLoaders: 1,
+          sourceMap: true,
           modules: true,
           localIdentName: '[name]_[local]__[hash:8]'
         }
       },
       {
         loader: 'postcss-loader',
-        options: postCssConf
+        options: {
+          sourceMap: true,
+          postCssConf
+        }
       }
     ]
   },

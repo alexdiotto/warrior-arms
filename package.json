@@ -9,7 +9,9 @@
     "lint:fix": "standard --fix",
     "build": "cross-env NODE_ENV=production BABEL_ENV=production webpack --progress --config webpack/prod.config -p",
     "build:analyzer": "cross-env ANALYZER=true yarn build",
-    "update-packages": "node scripts/update.js"
+    "update-packages": "node scripts/update.js",
+    "storybook": "start-storybook -p 6006 -c storybook",
+    "build-storybook": "build-storybook"
   },
   "jest": {
     "moduleNameMapper": {
@@ -17,6 +19,10 @@
     }
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.3.9",
+    "@storybook/addon-links": "^3.3.9",
+    "@storybook/addons": "^3.3.9",
+    "@storybook/react": "^3.3.9",
     "autoprefixer": "^7.1.1",
     "babel-core": "^6.23.1",
     "babel-eslint": "^7.2.0",
