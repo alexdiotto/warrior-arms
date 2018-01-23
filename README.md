@@ -13,11 +13,6 @@ Install packages:
 yarn install
 ```
 
-Update dependencies
-```sh
-node scripts/update.js
-```
-
 Run webpack-dev-server:
 ```sh
 yarn start
