@@ -45,4 +45,3 @@ Be Happy :smiley:
 - [x] File loader
 - [x] Image loaders
 - [x] hot-loader
-- [ ] Docker Image
