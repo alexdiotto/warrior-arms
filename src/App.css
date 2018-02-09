@@ -1,0 +1,20 @@
+body {
+  background: pink;
+}
+
+.paragraph {
+  color: darkviolet;
+  font-family: sans-serif;
+  position: relative;
+}
+
+.paragraph::before {
+  content: '';
+  background: yellow;
+  position: absolute;
+  height: 10px;
+  bottom: -10px;
+  left: 0;
+  width: 80px;
+  z-index: -1;
+}
